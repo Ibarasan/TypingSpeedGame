@@ -44,8 +44,11 @@ let end = 20; // Liczba przy której się przegrywa, jeżeli losing ją osiągni
 const game = () => {
     let timer = setInterval(() => {
         console.log(losing);
-        if (false) {
+        if (losing > end) {
             clearInterval(timer);
+            const div = document.querySelector(".container");
+            div.style.background = 'red';
+
         }
         createElement();
     }, 1000);
@@ -53,7 +56,6 @@ const game = () => {
 
 startBtn.addEventListener("click", () => { // Rozpoczęcie gry po wciśnięciu przycisku
     game();
-    console.log("odpalana jest funkcja game");
-}, {once: true});
+});
 
 
