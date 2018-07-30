@@ -27,6 +27,7 @@ window.addEventListener('keyup', (e) => {
 //=======================================================
 
 const startBtn = document.querySelector("#start");
+const restartBtn = document.querySelector("#restart");
 
 const createElement = () => {
     const el = document.createElement("div");
@@ -55,6 +56,17 @@ const endGame = () => {
     div.style.backgroundColor = "red";
 }
 
+const restartGame = () => {
+    const div = document.querySelector(".container");
+    
+    while (div.firstChild) {
+        div.removeChild(div.firstChild);
+    }
+    div.style.backgroundColor = "grey";
+    points = 0;
+    losing = 0;
+    game();
+}
 
 const game = () => {
     let timer = setInterval(() => {
@@ -72,5 +84,9 @@ startBtn.addEventListener("click", () => {
     game();
     console.log("odpalana jest funkcja game");
 }, {once: true});
+
+restartBtn.addEventListener("click", () => {
+    restartGame();
+});
 
 
