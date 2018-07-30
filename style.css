@@ -9,6 +9,21 @@
     background: grey;
 }
 
-.container > div {
+.word {
     position: absolute;
+}
+
+
+.scoreBoard {
+    background: green;
+    height: 200px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.gameOver {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 50px;
 }
